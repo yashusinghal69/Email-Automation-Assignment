@@ -221,7 +221,7 @@ def display_statistics(messages):
 def main():
     
     # Load data
-    csv_file = 'cleaned_output.csv'
+    csv_file = 'Cleaned data/cleaned_output1.csv'
     df = pd.read_csv(csv_file)
     print(f"✅ Successfully loaded {len(df)} records from CSV")
 
@@ -229,9 +229,9 @@ def main():
     messages = generate_all_messages(df)
     
     # Save outputs
-    save_csv_output(messages, 'personalized_messages.csv')
-    save_json_output(messages, 'personalized_messages.json')
-    
+    save_csv_output(messages, 'message_generation/personalized_messages.csv')
+    save_json_output(messages, 'message_generation/personalized_messages.json')
+
     # Display statistics
     display_statistics(messages)
     

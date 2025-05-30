@@ -115,7 +115,7 @@ def main():
         port, 
         sender_email, 
         password, 
-        'personalized_messages.json',
+        'message_generation/personalized_messages.json',
         test_mode=False,
         max_emails=5,
         delay=2

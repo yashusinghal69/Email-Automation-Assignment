@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-data = pd.read_csv('Data - Sheet1.csv')
+data = pd.read_csv('Raw data/Data - Sheet1.csv')
 
 # Remove duplicate rows having exact same rows
 data = data.drop_duplicates()
@@ -78,5 +78,5 @@ data['last_name']  = data['last_name'].fillna(data['parsed_last'])
 data = data.drop(columns=['parsed_first', 'parsed_last'])
 
 # Save cleaned output
-data.to_csv("cleaned_output1.csv", index=False)
+data.to_csv("Cleaned data/cleaned_output1.csv", index=False)
 

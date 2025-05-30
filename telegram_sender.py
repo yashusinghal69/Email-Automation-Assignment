@@ -3,13 +3,7 @@ import json
 import time
 from typing import List, Dict
 
-def load_messages(json_file='personalized_messages.json'):
-    """Load messages from JSON file"""
-    with open(json_file, 'r', encoding='utf-8') as f:
-        messages = json.load(f)
-    print(f"✅ Loaded {len(messages)} messages from {json_file}")
-    return messages
-
+ 
 
 def send_telegram_message(bot_token, chat_id, message):
     """Send a single message via Telegram Bot API"""
@@ -69,7 +63,10 @@ def main():
 
 
     # Load messages
-    messages = load_messages()
+    with open("message_generation/personalized_messages.json", 'r', encoding='utf-8') as f:
+        messages = json.load(f)
+    
+    print(f"✅ Loaded {len(messages)} messages from personalized_messages.json")
     
     # Send to Telegram
     send_messages_to_telegram(
